@@ -1,0 +1,22 @@
+{
+    "name": "Sample service zowe dev",
+    "defaultDirName": "runner-example-servive",
+    "defaultHlqSegment": "ZOWE.RUNNER",
+    "zfsMegabytes": 500,
+
+    "zosSourcesDir": "zossrc",
+    "buildCommand": "make && make install",
+    "buildFiles": {
+      "libzowe-sample.so": "src/main/resources/lib/libzowe-sample.so"
+    },
+
+     "deployment": {
+      "files": {
+        "build/libs/sample-service-zowedev.jar": {
+          "target": "bin/sampleapp.jar",
+          "binary": true
+        }
+      }
+  },
+  "shellStartCommand": "$JAVA -Duser.language=en -Duser.country=US -Djava.library.path=\"./lib:${LIBPATH}\" -Xquickstart -jar bin/sampleapp.jar"
+}
