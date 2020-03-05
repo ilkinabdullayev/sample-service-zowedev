@@ -4,12 +4,6 @@
     "defaultHlqSegment": "ZOWE.RUNNER",
     "zfsMegabytes": 500,
 
-    "zosSourcesDir": "zossrc",
-    "buildCommand": "make && make install",
-    "buildFiles": {
-      "libzowe-sample.so": "src/main/resources/lib/libzowe-sample.so"
-    },
-
      "deployment": {
       "files": {
         "build/libs/sample-service-zowedev.jar": {
@@ -18,5 +12,5 @@
         }
       }
   },
-  "shellStartCommand": "$JAVA -Duser.language=en -Duser.country=US -Djava.library.path=\"./lib:${LIBPATH}\" -Xquickstart -jar bin/sampleapp.jar"
+  "shellStartCommand": "$JAVA -Duser.language=en -Duser.country=US -Xquickstart -jar bin/sampleapp.jar"
 }
